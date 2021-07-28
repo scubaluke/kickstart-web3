@@ -9,7 +9,7 @@ if (typeof window !== "undefined" && typeof window.ethereum !== "undefined") {
 } else {
   // We are on the server *OR* the user is not running metamask
   const provider = new Web3.providers.HttpProvider(
-    "https://rinkeby.infura.io/v3/b16bb0aaa18a4383a6f68ab11f94350as"
+    "https://rinkeby.infura.io/v3/b16bb0aaa18a4383a6f68ab11f94350a"
   );
   web3 = new Web3(provider);
 }

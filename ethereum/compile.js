@@ -15,5 +15,4 @@ fs.ensureDirSync(buildPath);
 
 for (let contract in output) {
     fs.outputJSONSync(path.resolve(buildPath, contract.replace(':', '') + '.json'), output[contract])
-    console.log('ran');
 }

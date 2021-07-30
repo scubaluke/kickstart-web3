@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import factory from "../ethereum/factory";
 import { Card, Button } from 'semantic-ui-react' 
 import Layout from '../components/Layout';
+import { Link } from '../routes'
 
 function CampaignIndex({ campaigns }) {
 
@@ -9,7 +10,7 @@ function CampaignIndex({ campaigns }) {
         const items = campaigns.map(address => {
             return {
                 header: address,
-                description: <a href="#">View Campaign</a>,
+                description: (<Link route={`/campaigns/${address}`} ><a>View Campaign</a></Link>),
                 fluid: true
             }
         })
@@ -20,14 +21,17 @@ function CampaignIndex({ campaigns }) {
       <Layout>
           <div>
             <h3>Open Campings</h3>
-            <Button
-                content='Create Campaign'
-                icon='add circle'
-                primary 
-                floated='right'
-                />
-                            {renderCampaigns()}
-
+            <Link route='/campaigns/new'>
+                <a>
+                    <Button
+                        content='Create Campaign'
+                        icon='add circle'
+                        primary 
+                        floated='right'
+                    />
+                </a>
+             </Link>
+                {renderCampaigns()}
             </div>
       </Layout>
   );
